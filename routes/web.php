@@ -17,6 +17,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/contact', function () {
+    return view('contact');
+});
+
 Route::resource('admin/event', 'App\Http\Controllers\Admin\EventController');
 Route::resource('admin/fasilitas', 'App\Http\Controllers\Admin\FasilitasController');
 Route::resource('admin/jurusan', 'App\Http\Controllers\Admin\JurusanController');

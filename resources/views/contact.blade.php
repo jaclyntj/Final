@@ -1,6 +1,8 @@
-@extends('layouts.adminLTE')
+@extends('layouts.adminLTEcontact')
 
 @section('title', 'Selamat Datang')
+
+@section('title-body','Contact Us')
 
 @section('breadcrumb')
   <ol class="breadcrumb float-sm-right">
@@ -9,5 +11,4 @@
 @endsection
 
 @section('content')
-    <h1>SELAMAT DATANG DI SEKOLAH BUDDHIS JAYANTI</h1>
 @endsection
