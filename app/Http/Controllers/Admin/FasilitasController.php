@@ -51,7 +51,10 @@ class FasilitasController extends Controller
      */
     public function store(Request $request)
     {
-        
+        $request->validate([
+            'nama' => 'required',
+            'artikel' => 'required']);
+
         $requestData = $request->all();
 
         if ($image = $request->file('galeri')) {
@@ -104,7 +107,10 @@ class FasilitasController extends Controller
      */
     public function update(Request $request, $id)
     {
-        
+        $request->validate([
+            'nama' => 'required',
+            'artikel' => 'required']);
+
         $requestData = $request->all();
         
         $fasilita = Fasilita::findOrFail($id);

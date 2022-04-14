@@ -21,3 +21,4 @@ Route::resource('admin/event', 'App\Http\Controllers\Admin\EventController');
 Route::resource('admin/fasilitas', 'App\Http\Controllers\Admin\FasilitasController');
 Route::resource('admin/jurusan', 'App\Http\Controllers\Admin\JurusanController');
 Route::resource('admin/contact', 'App\Http\Controllers\Admin\ContactController');
+Route::resource('admin/home', 'App\Http\Controllers\Admin\HomeController');

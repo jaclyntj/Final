@@ -1,6 +1,6 @@
 <ul class="nav nav-treeview">
     <li class="nav-item">
-      <a class="nav-link " aria-current="page" href={{ asset("/") }}>
+      <a class="nav-link " href={{ asset("/admin/home") }}>
         <i class="far fa-circle nav-icon"></i>
         <p>Home</p>
       </a>

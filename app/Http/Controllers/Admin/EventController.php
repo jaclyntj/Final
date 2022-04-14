@@ -51,7 +51,10 @@ class EventController extends Controller
      */
     public function store(Request $request)
     {
-        
+        $request->validate([
+            'nama' => 'required',
+            'berita' => 'required']);
+
         $requestData = $request->all();
 
         if ($image = $request->file('galeri')) {
@@ -104,7 +107,10 @@ class EventController extends Controller
      */
     public function update(Request $request, $id)
     {
-        
+        $request->validate([
+            'nama' => 'required',
+            'berita' => 'required']);
+            
         $requestData = $request->all();
         
         $event = Event::findOrFail($id);

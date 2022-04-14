@@ -5,10 +5,10 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests;
 
-use App\Models\Contact;
+use App\Models\Home;
 use Illuminate\Http\Request;
 
-class ContactController extends Controller
+class HomeController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -21,16 +21,16 @@ class ContactController extends Controller
         $perPage = 25;
 
         if (!empty($keyword)) {
-            $contact = Contact::where('nama', 'LIKE', "%$keyword%")
-                ->orWhere('nomor', 'LIKE', "%$keyword%")
-                ->orWhere('email', 'LIKE', "%$keyword%")
-                ->orWhere('pesan', 'LIKE', "%$keyword%")
+            $home = Home::where('visi', 'LIKE', "%$keyword%")
+                ->orWhere('misi', 'LIKE', "%$keyword%")
+                ->orWhere('artikel', 'LIKE', "%$keyword%")
+                ->orWhere('galeri', 'LIKE', "%$keyword%")
                 ->latest()->paginate($perPage);
         } else {
-            $contact = Contact::latest()->paginate($perPage);
+            $home = Home::latest()->paginate($perPage);
         }
 
-        return view('admin.contact.index', compact('contact'));
+        return view('admin.home.index', compact('home'));
     }
 
     /**
@@ -40,7 +40,7 @@ class ContactController extends Controller
      */
     public function create()
     {
-        return view('admin.contact.create');
+        return view('admin.home.create');
     }
 
     /**
@@ -53,15 +53,22 @@ class ContactController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'nama' => 'required',
-            'nomor' => 'required',
-            'email' => 'required']);
+            'visi' => 'required',
+            'misi' => 'required',
+            'artikel' => 'required']);
 
         $requestData = $request->all();
-        
-        Contact::create($requestData);
 
-        return redirect('admin/contact')->with('flash_message', 'Contact added!');
+        if ($image = $request->file('galeri')) {
+            $destinationPath = 'image/';
+            $profileImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
+            $image->move($destinationPath, $profileImage);
+            $requestData['galeri'] = "$profileImage";
+        }
+        
+        Home::create($requestData);
+
+        return redirect('admin/home')->with('flash_message', 'Home added!');
     }
 
     /**
@@ -73,9 +80,9 @@ class ContactController extends Controller
      */
     public function show($id)
     {
-        $contact = Contact::findOrFail($id);
+        $home = Home::findOrFail($id);
 
-        return view('admin.contact.show', compact('contact'));
+        return view('admin.home.show', compact('home'));
     }
 
     /**
@@ -87,9 +94,9 @@ class ContactController extends Controller
      */
     public function edit($id)
     {
-        $contact = Contact::findOrFail($id);
+        $home = Home::findOrFail($id);
 
-        return view('admin.contact.edit', compact('contact'));
+        return view('admin.home.edit', compact('home'));
     }
 
     /**
@@ -103,16 +110,16 @@ class ContactController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'nama' => 'required',
-            'nomor' => 'required',
-            'email' => 'required']);
-            
+            'visi' => 'required',
+            'misi' => 'required',
+            'artikel' => 'required']);
+
         $requestData = $request->all();
         
-        $contact = Contact::findOrFail($id);
-        $contact->update($requestData);
+        $home = Home::findOrFail($id);
+        $home->update($requestData);
 
-        return redirect('admin/contact')->with('flash_message', 'Contact updated!');
+        return redirect('admin/home')->with('flash_message', 'Home updated!');
     }
 
     /**
@@ -124,8 +131,8 @@ class ContactController extends Controller
      */
     public function destroy($id)
     {
-        Contact::destroy($id);
+        Home::destroy($id);
 
-        return redirect('admin/contact')->with('flash_message', 'Contact deleted!');
+        return redirect('admin/home')->with('flash_message', 'Home deleted!');
     }
 }
