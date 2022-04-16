@@ -28,6 +28,15 @@
       <li class="nav-item d-none d-sm-inline-block">
         <a href="#" class="nav-link">Contact</a>
       </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="/event" class="nav-link">Event</a>
+      </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="/fasilitas" class="nav-link">Fasilitas</a>
+      </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="/jurusan" class="nav-link">Jurusan</a>
+      </li>
     </ul>
 
     <!-- Right navbar links -->

@@ -35,6 +35,15 @@
       <li class="nav-item d-none d-sm-inline-block">
         <a href="/contact" class="nav-link">Contact</a>
       </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="/event" class="nav-link">Event</a>
+      </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="/fasilitas" class="nav-link">Fasilitas</a>
+      </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="/jurusan" class="nav-link">Jurusan</a>
+      </li>
     </ul>
 
     <!-- Right navbar links -->
@@ -232,9 +241,9 @@
               <div class="card-body">
                 @yield('content')
               </div>
-            
           </div>
-
+          @yield('content-1')
+        </div>
        </div><!--/. container-fluid -->
     </section>
     <!-- /.content -->
@@ -270,7 +279,6 @@
 <script src='{{ asset("adminLTE/plugins/jquery-mapael/maps/usa_states.min.js") }}'></script>
 <!-- ChartJS -->
 <script src='{{ asset("adminLTE/plugins/chart.js/Chart.min.js") }}'></script>
-
 
 </body>
 </html>
