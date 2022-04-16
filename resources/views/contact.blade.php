@@ -1,6 +1,6 @@
 @extends('layouts.adminLTEcontact')
 
-@section('title', 'Selamat Datang')
+@section('title', 'Sekolah Buddhis Jayanti | Contact')
 
 @section('title-body','Contact Us')
 

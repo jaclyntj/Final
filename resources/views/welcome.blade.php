@@ -1,6 +1,6 @@
 @extends('layouts.adminLTE')
 
-@section('title', 'Selamat Datang')
+@section('title', 'Sekolah Buddhis Jayanti | Dashboard')
 
 @section('breadcrumb')
   <ol class="breadcrumb float-sm-right">
@@ -10,7 +10,7 @@
 
 @section('content')
     <h1>Halaman Dashboard</h1>
-    <p>Hello, <b>Admin</b>.  Selamat datang di sistem informasi Sekolah Buddhis Jayanti.</p>
+    <p>Hello, <b>{{ Auth::user()->name }}</b>.  Selamat datang di sistem informasi Sekolah Buddhis Jayanti.</p>
 @endsection
 
 @section('content-1')
@@ -103,7 +103,7 @@
     Page Views
     <span class="float-right"><b>777</b>/1000</span>
     <div class="progress progress-sm">
-      <div class="progress-bar bg-danger" style="width: 75%"></div>
+      <div class="progress-bar bg-success" style="width: 75%"></div>
     </div>
     </div>
   
@@ -111,7 +111,7 @@
     Visitors
     <span class="float-right"><b>500</b>/600</span>
     <div class="progress progress-sm">
-      <div class="progress-bar bg-success" style="width: 85%"></div>
+      <div class="progress-bar bg-warning" style="width: 85%"></div>
     </div>
     </div>
   
@@ -119,7 +119,7 @@
     Send Inquiries
     <span class="float-right"><b>22</b>/50</span>
     <div class="progress progress-sm">
-      <div class="progress-bar bg-warning" style="width: 50%"></div>
+      <div class="progress-bar bg-danger" style="width: 50%"></div>
     </div>
     </div>
   </div>
