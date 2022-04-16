@@ -4,7 +4,7 @@
     <div class="container">
         <div class="row">
 
-            <div class="col-md-9">
+            <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">Event</div>
                     <div class="card-body">
@@ -36,7 +36,7 @@
                                 @foreach($event as $item)
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
-                                        <td>{{ $item->nama }}</td><td>{{ $item->berita }}</td><td><img src='\image\{{ $item->galeri }}' width="300px"></td>
+                                        <td>{{ $item->nama }}</td><td>{{ $item->berita }}</td><td><img src='\image\{{ $item->galeri }}' width="200px"></td>
                                         <td>
                                             <a href="{{ url('/admin/event/' . $item->id) }}" title="View Event"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a>
                                             <a href="{{ url('/admin/event/' . $item->id . '/edit') }}" title="Edit Event"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>

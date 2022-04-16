@@ -4,7 +4,7 @@
     <div class="container">
         <div class="row">
 
-            <div class="col-md-9">
+            <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">Event {{ $event->id }}</div>
                     <div class="card-body">
@@ -26,7 +26,7 @@
                                     <tr>
                                         <th>ID</th><td>{{ $event->id }}</td>
                                     </tr>
-                                    <tr><th> Nama </th><td> {{ $event->nama }} </td></tr><tr><th> Berita </th><td><img src='\image\{{ $event->berita }}' width='500px'> </td></tr><tr><th> Galeri </th><td> {{ $event->galeri }} </td></tr>
+                                    <tr><th> Nama </th><td> {{ $event->nama }} </td></tr><tr><th> Berita </th><td>{{ $event->berita }}</td></tr><tr><th> Galeri </th><td><img src='\image\ {{ $event->galeri }}' width='500px'></td></tr>
                                 </tbody>
                             </table>
                         </div>
